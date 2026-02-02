@@ -6,6 +6,7 @@
     <title>Mountain Men: A Year in the Wild</title>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <style>
         body { margin: 0; padding: 0; }
         @keyframes diceRoll { from { transform: rotate(-12deg) scale(1.08); } to { transform: rotate(12deg) scale(0.92); } }
@@ -18,7 +19,7 @@
 </head>
 <body>
     <div id="root"></div>
-    <script>
+    <script type="text/babel">
 
 
 // ─── GAME DATA ────────────────────────────────────────────────────────────────
@@ -217,7 +218,7 @@ function Dice({ value, rolling }) {
             transform: "translate(-50%, -50%)",
             boxShadow: "0 1px 2px rgba(0,0,0,0.3)",
           }}
-        >
+        />
       ))}
     </div>
   );
@@ -664,7 +665,7 @@ function MountainManGame() {
 
 const { useState, useRef } = React;
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(React.createElement(MountainManGame));
+root.render(<MountainManGame />);
     </script>
 </body>
 </html>
